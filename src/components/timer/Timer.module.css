@@ -1,0 +1,9 @@
+.timer {
+  grid-area: timer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #080e33;
+  font-weight: bold;
+  padding: 20px;
+}
