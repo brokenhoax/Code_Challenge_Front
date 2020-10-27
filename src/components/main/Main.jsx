@@ -1,7 +1,18 @@
 import styles from "./Main.module.css"
+import React, { useState } from "react";
 import Questions from "../../db/Quiz_Data"
 
 const Main = () => {
+
+    const [startClass, setStartClass] = useState(true);
+
+
+
+    const startGame = () => {
+        console.log("Quiz Started");
+        setStartClass(!startClass);
+    }
+
 
     return ( 
     <div className={styles.main}>
@@ -30,11 +41,10 @@ const Main = () => {
                     </div>
                 </div>
                 <div className="controls">
-                    <button className={styles.startBtn, styles.btn}>Ready!</button>
+                    <button className={startClass ? `${styles.startBtn}`: `${styles.hide}`} onClick={startGame}>Ready!</button>
                     <button id={styles.nextBtn} className={`${styles.nextBtn} ${styles.btn} ${styles.btnPrimary} ${styles.hide}`}>Next</button>
                     <button id={styles.resultsBtn} className={`${styles.resultsBtn} ${styles.btn} ${styles.btnPrimary} ${styles.hide}`}>Submit Your Results!</button>
                 </div>
-                <div id="scoreboard" className="hide"></div>
             </div>
         </div>
     </div> 
