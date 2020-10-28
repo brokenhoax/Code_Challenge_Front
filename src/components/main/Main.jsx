@@ -2,22 +2,25 @@ import styles from "./Main.module.css"
 import React, { useState } from "react";
 import Questions from "../../db/Quiz_Data"
 
+
 const Main = () => {
 
     const [startClass, setStartClass] = useState(true);
+    const [nextBtnClass, setNextBtnClass] = useState(false);
+    const [resultsBtnClass, setResultsBtnClass] = useState(false);
+    const [welcomeClass, setWelcomeClass] = useState(true);
 
-
-
-    const startGame = () => {
+    const startGame = (e) => {
+        e.preventDefault();
         console.log("Quiz Started");
         setStartClass(!startClass);
+        setWelcomeClass(!welcomeClass);
     }
-
 
     return ( 
     <div className={styles.main}>
         <div className={styles.wrapper}>
-            <div className={styles.welcome}>
+            <div className={welcomeClass ? `${styles.welcome}` : `${styles.hide}`}>
                 <h1>Welcome to Quizzy!</h1>
                     <h2>How To Play:</h2>
                         <ul>
@@ -41,9 +44,8 @@ const Main = () => {
                     </div>
                 </div>
                 <div className="controls">
-                    <button className={startClass ? `${styles.startBtn}`: `${styles.hide}`} onClick={startGame}>Ready!</button>
-                    <button id={styles.nextBtn} className={`${styles.nextBtn} ${styles.btn} ${styles.btnPrimary} ${styles.hide}`}>Next</button>
-                    <button id={styles.resultsBtn} className={`${styles.resultsBtn} ${styles.btn} ${styles.btnPrimary} ${styles.hide}`}>Submit Your Results!</button>
+                    <button className={startClass ? `${styles.startBtn}`: `${styles.hide}`} onClick={(e) => {startGame(e)}}>Ready!</button>
+                    <button className={resultsBtnClass ? `${styles.resultsBtn}` : `${styles.hide}`}>Submit Your Results!</button>
                 </div>
             </div>
         </div>
