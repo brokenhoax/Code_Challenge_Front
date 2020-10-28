@@ -1,35 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, {  useContext, useEffect, useRef } from "react";
+import { TimerContext } from '../../context/TimerContext';
 import styles from "./Timer.module.css";
 
-const Timer = () => {
+export const Timer = () => {
 
-    const [seconds, setSeconds] = useState(5);
-    const [isActive, setIsActive] = useState(true);
-    
-    const hideTimer = () => {
-        setIsActive(!isActive);
-    }
-
-    const reset = () => {
-        setSeconds(0);
-        setIsActive(false);
-    }
+    const [counter, setCounter] = useContext(TimerContext);
 
     useEffect(() => {
-        seconds > 0 && setTimeout(() => setSeconds(seconds - 1), 1000);
-        if (seconds === 0) {
-            setSeconds(!isActive);
+        const timer = counter.seconds > 0 && setInterval(() => setCounter({seconds: counter.seconds - 1, isActive: true}), 1000);
+        console.log(counter.seconds);
+        if (counter.seconds === 0) {
             alert("Time's Up!")
-        }
-    }, [seconds]);
-
+            setCounter({seconds: '', isActive: false});
+            console.log(counter);
+        };
+        if (!counter.isActive) {
+            console.log(counter);
+        };
+        return () => 
+            clearTimeout(timer);   
+    },[counter.seconds, counter.isActive]);
 
     return ( 
-        <div 
-            className={isActive ? `${styles.timer}` : `${styles.hide}`}>
-            {seconds}
-        </div>
+            <div 
+            className={`${counter.isActive === true}` ? `${styles.timer}` : `${styles.hide}`}>
+            {counter.seconds}
+            </div>
      );
 }
- 
+
 export default Timer;

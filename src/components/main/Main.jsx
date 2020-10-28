@@ -1,10 +1,9 @@
 import styles from "./Main.module.css"
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Questions from "../../db/Quiz_Data"
 
 
 const Main = () => {
-
     const [startClass, setStartClass] = useState(true);
     const [nextBtnClass, setNextBtnClass] = useState(false);
     const [resultsBtnClass, setResultsBtnClass] = useState(false);
