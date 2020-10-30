@@ -1,10 +1,11 @@
 .main {
   grid-area: main;
-  background-color: white;
+  background-color: #0c154a;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  color: white;
 }
 
 .wrapper {
@@ -58,6 +59,8 @@ main.incorrect {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: red;
+  width: 100%;
 }
 
 #question {

@@ -4,15 +4,15 @@ export const TimerContext = createContext();
 
 export const TimerProvider = props => {
 
-    const [counter, setCounter] = useState(
+    const [counter, setCounterContext] = useState(
         {
-            seconds: 5,
-            isActive: true
+            seconds: '',
+            isActive: false
         }
     );
 
     return ( 
-        <TimerContext.Provider value={[counter, setCounter]}>
+        <TimerContext.Provider value={[counter, setCounterContext]}>
             {props.children}
         </TimerContext.Provider>
      );
