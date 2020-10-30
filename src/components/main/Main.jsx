@@ -13,7 +13,7 @@ const Main = props => {
     if (!quiz.isStarted) {
         return (
             <div className={styles.main}>
-                <div className={styles.wrapper}>
+                <div className={styles.welcomeContainer}>
                     <div className={props.welcomeClass ? `${styles.welcome}` : `${styles.hide}`}>
                         <h1>Welcome to Quizzy!</h1>
                             <h2>How To Play:</h2>
@@ -27,20 +27,8 @@ const Main = props => {
                             <p>Are you up to the challenge?!</p>
                         <h2>Click the "Ready" button below to begin... Good luck!</h2>
                     </div>
-                    <div className={`${styles.container} ${styles.questionContainer}`}>
-                        <div id={styles.questionContainer} className={styles.hide}>
-                            <div id={styles.question}>Question</div>
-                            <div id={styles.answerBtns} className={`${styles.btnGrid} ${styles.butt}`}>
-                                <button className={styles.btn}>Answer 1</button>
-                                <button className={styles.btn}>Answer 2</button>
-                                <button className={styles.btn}>Answer 3</button>
-                                <button className={styles.btn}>Answer 4</button>
-                            </div>
-                        </div>
-                        <div className="controls">
-                            <button className={props.startClass ? `${styles.startBtn}`: `${styles.hide}`} onClick={(e) => {props.startGame(e)}}>Ready!</button>
-                            <button className={props.resultsBtnClass ? `${styles.resultsBtn}` : `${styles.hide}`}>Submit Your Results!</button>
-                        </div>
+                    <div className={styles.controls}>
+                        <button className={props.startClass ? `${styles.btn}`: `${styles.hide}`} onClick={(e) => {props.startGame(e)}}>Ready!</button>
                     </div>
                 </div>
             </div>
@@ -50,7 +38,29 @@ const Main = props => {
     if (quiz.isStarted) {
         return (
             <div className={styles.main}>
-                <h1>Quiz Container Here!</h1>
+                <div className={styles.quizContainer}>
+                    <div className={styles.question}>
+                        What is your favorite color?
+                    </div>
+                    <div className={styles.one}>
+                        <button className={styles.btn}>Answer 1</button>
+                    </div>
+                    <div className={styles.two}>
+                        <button className={styles.btn}>Answer 2</button>
+                    </div>
+                    <div className={styles.three}>
+                        <button className={styles.btn}>Answer 3</button>
+                    </div>
+                    <div className={styles.four}>
+                        <button className={styles.btn}>Answer 4</button>
+                    </div>
+                    <div className={styles.previous}>
+                        <button className={styles.btn}>Previous</button>
+                    </div>
+                    <div className={styles.next}>
+                        <button className={styles.btn}>Next</button>
+                    </div>
+                </div>
             </div>
         );
     }

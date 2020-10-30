@@ -11,32 +11,45 @@ const Quiz = () => {
 
     const [counter, setCounter] = useContext(TimerContext);
     const [quiz, setQuizContext] = useContext(QuizContext);
+    const [welcome, setWelcomeState] = useState(true);
     const [startClass, setStartClass] = useState(true);
     const [nextBtnClass, setNextBtnClass] = useState(false);
     const [resultsBtnClass, setResultsBtnClass] = useState(false);
     const [welcomeClass, setWelcomeClass] = useState(true);
 
+
+
+
     useEffect(() => {
         if (quiz.isStarted) {
-            const timer = counter.seconds > 0 && setInterval(() => setCounter({seconds: counter.seconds - 1, isActive: true}), 1000);
+            console.log("Is Quiz Started?: " + quiz.isStarted);
+            const timer = counter.seconds >= 1 && setInterval(() => setCounter({seconds: counter.seconds - 1, isActive: true}), 1000);
+            console.log("Is Timer Active?: " + counter.isActive);
             console.log(counter.seconds);
             if (counter.seconds === 0) {
-                alert("Time's Up!")
-                setCounter({seconds: 0, isActive: false});
                 setQuizContext({isStarted: false})
-                console.log(counter);
+                setCounter({seconds: '', isActive: false});
+                console.log("Is Quiz Started?: " + quiz.isStarted);
+                console.log("Is Timer Active?: " + counter.isActive);
+                console.log(counter.seconds);
+                alert("Time's Up!")
             };
             return () => 
                 clearTimeout(timer);
         }
-    }, [counter.seconds, counter.isActive]);
+    }, [counter.seconds, counter.isActive, quiz.isStarted]);
+
+    // useEffect(() => {
+    //     if (quiz.isStarted) {
+    //         setWelcomeState(welcome = false)
+    //         console.log("what is this!?!" + welcome)
+    //     }
+    // }, []);
 
     function startGame (e) {
         e.preventDefault();
         setQuizContext({isStarted: true})
-        console.log(quiz.isStarted);
-        setCounter({seconds: 5, isActive: true});
-        console.log(counter.isStarted);
+        setCounter({seconds: 400, isActive: true});
         setStartClass(!startClass);
         setWelcomeClass(!welcomeClass);
     }
