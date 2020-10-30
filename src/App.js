@@ -1,18 +1,17 @@
-import Logo from './components/logo/Logo';
-import Title from './components/title/Title';
-import Timer from './components/timer/Timer';
-import Main from './components/main/Main';
+import React from "react";
+import Quiz from './components/quiz/Quiz';
+import { TimerProvider }  from "./context/TimerContext";
+import { QuizProvider }  from "./context/QuizContext";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Main className="main"/>  
-      <Logo />
-      <Title />
-      <Timer />
+const App = () =>  {
 
-    </div>
+  return (
+    <QuizProvider>
+      <TimerProvider>
+          <Quiz />
+      </TimerProvider>
+    </QuizProvider>
   );
 }
 
