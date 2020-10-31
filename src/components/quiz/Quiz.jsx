@@ -49,7 +49,7 @@ const Quiz = () => {
     function startGame (e) {
         e.preventDefault();
         setQuizContext({isStarted: true})
-        setCounter({seconds: 400, isActive: true});
+        setCounter({seconds: 400    , isActive: true});
         setStartClass(!startClass);
         setWelcomeClass(!welcomeClass);
     }

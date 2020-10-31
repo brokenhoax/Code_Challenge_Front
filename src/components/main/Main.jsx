@@ -40,7 +40,7 @@ const Main = props => {
             <div className={styles.main}>
                 <div className={styles.quizContainer}>
                     <div className={styles.question}>
-                        What is your favorite color?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error illum, eligendi porro voluptas ipsa ullam nesciunt, esse modi iste delectus natus fugit repudiandae fugiat unde iure cumque a earum amet incidunt. Molestiae quae doloremque accusantium quidem nobis facilis exercitationem sapiente?
                     </div>
                     <div className={styles.one}>
                         <button className={styles.btn}>Answer 1</button>
@@ -54,11 +54,11 @@ const Main = props => {
                     <div className={styles.four}>
                         <button className={styles.btn}>Answer 4</button>
                     </div>
-                    <div className={styles.previous}>
-                        <button className={styles.btn}>Previous</button>
+                    <div className={styles.prev}>
+                        <button className={styles.nextBtn}>Previous</button>
                     </div>
                     <div className={styles.next}>
-                        <button className={styles.btn}>Next</button>
+                        <button className={styles.prevBtn}>Next</button>
                     </div>
                 </div>
             </div>
