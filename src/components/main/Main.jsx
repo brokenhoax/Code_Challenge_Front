@@ -1,10 +1,6 @@
 import React, { useState, useContext } from "react";
 import { QuizContext } from '../../context/QuizContext';
-import styles from "./Main.module.css"
-
-import Questions from "../../db/Quiz_Data"
-import Quiz from "../quiz/Quiz";
-
+import styles from "./Main.module.css";
 
 const Main = props => {
 
@@ -40,10 +36,10 @@ const Main = props => {
             <div className={styles.main}>
                 <div className={styles.quizContainer}>
                     <div className={styles.question}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error illum, eligendi porro voluptas ipsa ullam nesciunt, esse modi iste delectus natus fugit repudiandae fugiat unde iure cumque a earum amet incidunt. Molestiae quae doloremque accusantium quidem nobis facilis exercitationem sapiente?
+                        {props.questionOne}
                     </div>
                     <div className={styles.one}>
-                        <button className={styles.btn}>Answer 1</button>
+                        <button className={styles.btn}>{props.answerOne}</button>
                     </div>
                     <div className={styles.two}>
                         <button className={styles.btn}>Answer 2</button>
