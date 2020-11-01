@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# Quizzy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Project Image](./public/assets/images/Quizzy.png)
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+- [Description](#description)
+- [Technologies](#technologies)
+- [Get Started](#get-started)
+- [References](#references)
+- [License](#License)
+- [Author's Info](#author's-info)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Back To Top](#Quizzy)
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Description
 
-### `npm run build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Virtuoso is an aspiring online education platform built with a focus on improving the experience and efficacy of webinars as an educational forum.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+We put our content creator (aka "Virtuoso") in the spotlight by making it easy for them to create, organize, and share their content in a way that fits their workflow and vision.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We enable our content consumer (aka "Prodigy") by making it easy for them to access and find the right content, without hassle. Out prodigies have the advantage being aided by our adaptive assessments, curated learning paths, courses authored by top industry experts, and on-demand usage statistics and reports.
 
-### `npm run eject`
+Virtuoso is simply the stage. It's our community that makes for a symphony. [Hear with your eyes.](https://brokenhoax.github.io/Prodigy-Frontend/#/register)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [M]ongoDb/Mongoose
+- [E]xpress
+- [R]eact
+- [N]ode
 
-## Learn More
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Back To Top](#Quizzy)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
 
-### Code Splitting
+## Get Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
 
-### Analyzing the Bundle Size
+### To test the app hosted on GitHub:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br>
 
-### Making a Progressive Web App
+[Add Link Here]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<br>
 
-### Advanced Configuration
+### To run the app locally:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br>
 
-### Deployment
+<strong>Step 1</strong> - Clone the GitHub repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[Link: Quizzy Repository on GitHub](https://github.com/brokenhoax/Code_Challenge_Front)
 
-### `npm run build` fails to minify
+```javascript
+git clone https://github.com/brokenhoax/Code_Challenge_Front
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+
+<strong>Step 2</strong> - Install Quizzy's dependencies by running the following command within the root directory of your recently cloned folder:
+
+```javascript
+npm install
+```
+
+<br>
+
+<strong>Step 3</strong> - After Step 2 has completed and the Node packages have been installed, run the following command within the root directory of your recently cloned folder:
+
+```javascript
+npm start
+```
+
+<br>
+
+<strong>Step 4</strong> - After Step 3 your browser should launch Quizzy. If Quizzy didn't launch, and assuming your local host port is set to 3000, click [this link](http://localhost:3000/) to launch Quizzy.
+
+<br>
+
+<strong>Step 5</strong> - Enjoy!
+
+<br>
+
+[Back To Top](#Quizzy)
+
+<br>
+
+## References
+
+<br>
+
+[Built with React](https://reactjs.org/docs/getting-started.html)
+
+[MERN JWT Authorization with Devistry](https://www.youtube.com/c/Devistry/featured)
+
+[Styling Tips & Tricks with Kevin Powell](https://www.youtube.com/channel/UCJZv4d5rbIKd4QHMPkcABCw)
+
+[State Crash Course with DevEd](https://www.youtube.com/c/DevEd/featured)
+
+[Props and Context with WebDevSimplified](https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw)
+
+[CSS Modules with CSS-Tricks](https://css-tricks.com/css-modules-part-3-react/)
+
+<br>
+
+[Back To Top](#Quizzy)
+
+<br>
+
+## License
+
+<br>
+
+Released under MIT License
+
+Copyright (c) 2020 | Andrew Kraus
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+<br>
+
+[Back To Top](#Quizzy)
+
+<br>
+
+## Author's Info
+
+<br>
+
+- GitHub - [brokenhoax](https://github.com/brokenhoax)
+- LinkedIn - [Andrew Kraus](https://www.linkedin.com/in/andrewkraus/)
+
+<br>
+
+[Back To Top](#Quizzy)
