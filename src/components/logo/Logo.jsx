@@ -1,9 +1,13 @@
+import React, { useContext } from "react";
 import styles from "./Logo.module.css"
+import { QuizContext } from '../../context/QuizContext';
 
-const Logo = () => {
+const Logo = props => {
+    const [quiz, setQuizContext] = useContext(QuizContext);
+
     return ( 
         <div className={styles.logo}>
-            <div id={styles.spinner}>Q</div>
+            <div id={styles.spinner}>{quiz.score}</div>
         </div>
      );
 }

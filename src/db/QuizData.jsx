@@ -1,6 +1,6 @@
 const Questions = [
   {
-    "question": "What was Tandem previous name?",
+    "question": "What was Tandem's previous name?",
     "incorrect": ["Tandem", "Burger Shack", "Extraordinary Humans"],
     "correct": "Devmynd"
   },
