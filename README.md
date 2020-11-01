@@ -15,21 +15,27 @@
 
 <br>
 
-[Back To Top](#Quizzy)
-
-<br>
-
 ## Description
 
 <br>
 
-Virtuoso is an aspiring online education platform built with a focus on improving the experience and efficacy of webinars as an educational forum.
+Quizzy is a simple quiz app built using the MERN stack.
 
-We put our content creator (aka "Virtuoso") in the spotlight by making it easy for them to create, organize, and share their content in a way that fits their workflow and vision.
+Quizzy allows users to track their score as they work through the provided questions.
 
-We enable our content consumer (aka "Prodigy") by making it easy for them to access and find the right content, without hassle. Out prodigies have the advantage being aided by our adaptive assessments, curated learning paths, courses authored by top industry experts, and on-demand usage statistics and reports.
+Answers are provided in multiple choice format and correct answers are provided when answered incorrectly.
 
-Virtuoso is simply the stage. It's our community that makes for a symphony. [Hear with your eyes.](https://brokenhoax.github.io/Prodigy-Frontend/#/register)
+The pressure is on with the addition of a 45-second timer!
+
+And the stakes are high with point deductions for every incorrect answer!!
+
+Can you break 100 and be "super-hero like"?
+
+Try if you dare!
+
+<br>
+
+[Back To Top](#Quizzy)
 
 <br>
 
