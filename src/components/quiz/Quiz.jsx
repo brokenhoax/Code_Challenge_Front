@@ -3,7 +3,6 @@ import Main from '../main/Main';
 import Logo from '../logo/Logo';
 import Title from '../title/Title';
 import Timer from '../timer/Timer';
-import Hello from '../timer/Test';
 import Questions from '../../db/QuizData';
 import { QuizContext } from '../../context/QuizContext';
 import '../../App.css';
@@ -34,7 +33,10 @@ const Quiz = () => {
 
     const handleAnswer = (e) => {
         const selectedButton = e.target.value;
-        if (selectedButton === "monkey") {
+        const buttonCorrectCheck = Object.keys(firstObject);
+        const correctCheck = Object.values(firstObject)[2];
+        console.log(correctCheck);
+        if (selectedButton === correctCheck) {
             alert("You got that right!");
         } else {
             alert("You got that wrong!");
@@ -59,7 +61,6 @@ const Quiz = () => {
             <Logo />
             <Title />
             <Timer />
-            <Hello />
         </div>
      );
 }
