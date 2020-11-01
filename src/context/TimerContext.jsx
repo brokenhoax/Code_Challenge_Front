@@ -6,7 +6,7 @@ export const TimerProvider = props => {
 
     const [counter, setCounterContext] = useState(
         {
-            seconds: 4,
+            seconds: 40,
             isActive: false
         }
     );

@@ -36,25 +36,25 @@ const Main = props => {
             <div className={styles.main}>
                 <div className={styles.quizContainer}>
                     <div className={styles.question}>
-                        {props.questionOne}
+                        {props.question}
                     </div>
                     <div className={styles.one}>
-                        <button className={styles.btn}>{props.answerOne}</button>
+                        <button className={styles.btn} value={props.answerOne} onClick={(e) => {props.handleAnswer(e)}}>{props.answerOne}</button>
                     </div>
                     <div className={styles.two}>
-                        <button className={styles.btn}>Answer 2</button>
+                        <button className={styles.btn} value={props.answerTwo} onClick={(e) => {props.handleAnswer(e)}}>{props.answerTwo}</button>
                     </div>
                     <div className={styles.three}>
-                        <button className={styles.btn}>Answer 3</button>
+                        <button className={styles.btn} value={props.answerThree} onClick={(e) => {props.handleAnswer(e)}}>{props.answerThree}</button>
                     </div>
                     <div className={styles.four}>
-                        <button className={styles.btn}>Answer 4</button>
+                        <button className={styles.btn} value={props.answerFour} onClick={(e) => {props.handleAnswer(e)}}>{props.answerFour}</button>
                     </div>
                     <div className={styles.prev}>
                         <button className={styles.nextBtn}>Previous</button>
                     </div>
                     <div className={styles.next}>
-                        <button className={styles.prevBtn}>Next</button>
+                        <button className={styles.prevBtn} onClick={(e) => {props.showNextQuestion(e)}}>Next</button>
                     </div>
                 </div>
             </div>
