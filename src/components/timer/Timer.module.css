@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 .timer {
   grid-area: timer;
   display: flex;
@@ -6,6 +10,8 @@
   background-color: #080e33;
   font-weight: bold;
   padding: 20px;
+  font-family: "Vampiro One", cursive;
+  font-size: 2rem;
 }
 
 .hide {

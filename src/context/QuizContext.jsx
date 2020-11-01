@@ -7,6 +7,7 @@ export const QuizProvider = props => {
     const [quiz, setQuizContext] = useState(
         {
             isStarted: false,
+            isFinished: false,
             number: 0,
             score: 'Q',
             correctAnswer: true,
@@ -114,11 +115,7 @@ export const QuizProvider = props => {
                 },
                 {
                   "question": "The Vatican bank has the only ATM in the world that allows users to do what?",
-                  "incorrect": [
-                    "Receive withdrawls in rosary beads",
-                    "Vote for the Pope",
-                    "Purchase indulgences"
-                  ],
+                  "incorrect": ["Receive withdrawls in rosary beads", "Vote for the Pope", "Purchase indulgences"],
                   "correct": "Perform transactions in Latin"
                 }
             ],

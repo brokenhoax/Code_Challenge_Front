@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 .main {
   grid-area: main;
   background-color: #0c154a;
@@ -66,7 +70,7 @@
 .quizContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 3fr 2fr 2fr auto;
+  grid-template-rows: auto 2fr 2fr auto;
   grid-template-areas:
     "question question"
     "one      two "
@@ -79,13 +83,10 @@
   gap: 1rem;
 }
 
-#scoreboard {
-  text-align: center;
-}
-
 .question {
+  display: grid;
   grid-area: question;
-  margin-bottom: 4rem;
+  justify-items: center;
   font-size: 4rem;
 }
 
@@ -109,22 +110,6 @@
   grid-area: four;
 }
 
-.prev {
-  display: grid;
-  justify-self: end;
-  grid-area: prev;
-  border: none;
-  font-size: 2rem;
-}
-
-.next {
-  display: grid;
-  justify-self: start;
-  grid-area: next;
-  border: none;
-  font-size: 2rem;
-}
-
 .btn {
   border: none;
   height: 100%;
@@ -132,30 +117,40 @@
   color: white;
   border-radius: 0.5rem;
   font-size: 3rem;
+  padding: 2rem;
+  margin: 2rem;
 }
 
-.nextBtn {
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.score {
+  font-size: 10rem;
+  font-family: "Vampiro One", cursive;
+  color: #8d07f6;
+}
+
+.message {
+  padding: 2rem;
+}
+
+.navBtns {
+  display: flex;
+  width: 100%;
+  justify-self: space-between;
+}
+
+.nav {
   border: none;
   height: 100%;
   background-color: #080e33;
   color: white;
   border-radius: 0.5rem;
-  font-size: 2rem;
-  width: 20rem;
-  height: 10rem;
-}
-
-.prevBtn {
-  border: none;
-  height: 100%;
-  background-color: #080e33;
-  color: white;
-  border-radius: 0.5rem;
-  font-size: 2rem;
-  width: 20rem;
-  height: 10rem;
-}
-
-.hide {
-  display: none;
+  font-size: 3rem;
+  padding: 2rem;
+  margin: 2rem;
 }

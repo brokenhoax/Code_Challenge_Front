@@ -5,8 +5,20 @@ import styles from "./Main.module.css";
 const Main = props => {
 
     const [quiz, setQuizContext] = useContext(QuizContext);
+
+    const handleMessage = () => {
+        if (quiz.score <= 60) {
+            return ("¯¯\\_(ツ)_/¯¯")
+        };
+        if (quiz.score >= 70 && quiz.score < 100 ) {
+            return ("Great job!")
+        };
+        if (quiz.score >= 100) {
+            return ("Super Hero Like!!!")
+        };
+    }
     
-    if (!quiz.isStarted) {
+    if (!quiz.isStarted && !quiz.isFinished) {
         return (
             <div className={styles.main}>
                 <div className={styles.welcomeContainer}>
@@ -14,17 +26,16 @@ const Main = props => {
                         <h1>Welcome to Quizzy!</h1>
                             <h2>How To Play:</h2>
                                 <ul>
-                                    <li>You will have 2 minutes to complete the quiz.</li>
+                                    <li>You will have 45 seconds to complete the quiz.</li>
                                     <li>A countdown timer (top-right) will help you keep track.</li>
                                     <li>You will earn 10 points for every question you answer correctly.</li>
-                                    <li>You will earn 0 points for every question you get wrong.</li>
-                                    <li>You will lose 10 seconds for every question you get wrong.</li>
+                                    <li>You will lose 10 points for every question you get wrong.</li>
                                 </ul>
                             <p>Are you up to the challenge?!</p>
                         <h2>Click the "Ready" button below to begin... Good luck!</h2>
                     </div>
                     <div className={styles.controls}>
-                        <button className={props.startClass ? `${styles.btn}`: `${styles.hide}`} onClick={(e) => {props.startGame(e)}}>Ready!</button>
+                        <button className={styles.btn} onClick={(e) => {props.startGame(e)}}>Ready!</button>
                     </div>
                 </div>
             </div>
@@ -49,6 +60,22 @@ const Main = props => {
                     </div>
                     <div className={styles.four}>
                         <button className={styles.btn} value={props.answerFour} onClick={(e) => {props.handleAnswer(e)}}>{props.answerFour}</button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    if (quiz.isFinished) {
+        return (
+            <div className={styles.main}>
+                <div className={styles.scoreboard}>
+                    <h1 className={styles.message}>{handleMessage()}</h1>
+                    <p className={styles.score}>{quiz.score}</p>
+                    <h1 className={styles.message}>Points</h1>
+                    <div className={styles.navBtns}>
+                        <button className={styles.nav} onClick={(e) => {props.goHome(e)}}>Home</button>
+                        <button className={styles.nav} onClick={(e) => {props.startGame(e)}}>Restart</button>
                     </div>
                 </div>
             </div>

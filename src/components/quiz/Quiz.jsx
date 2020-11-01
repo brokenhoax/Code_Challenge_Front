@@ -14,21 +14,42 @@ const Quiz = () => {
     const [nextBtnClass, setNextBtnClass] = useState(false);
     const [resultsBtnClass, setResultsBtnClass] = useState(false);
     const [welcomeClass, setWelcomeClass] = useState(true);
+
+
+
     const QuestionObj = Object.values(quiz.questions)[quiz.number];
 
     function startGame (e) {
         e.preventDefault();
         console.log(quiz.number);
-        setQuizContext({isStarted: true, number: 0, score: 0, correctAnswer: true,  questions: Questions});
+        setQuizContext({isStarted: true, isFinished: false, number: 0, score: 0, correctAnswer: true,  questions: Questions});
     }
 
-    function QuestionCorrect() {
-        setQuizContext({isStarted: true, number: quiz.number + 1, score: quiz.score + 10, correctAnswer: true, questions: Questions});
+    function goHome (e) {
+        setQuizContext({isStarted: false, isFinished: false, number: 0, score: 0, correctAnswer: true,  questions: Questions});
     }
 
-    function QuestionIncorrect() {
-        setQuizContext({isStarted: true, number: quiz.number + 1, score: quiz.score - 10, correctAnswer: false, questions: Questions});
+    const QuestionCorrect = () => {
+        if (quiz.number === (quiz.questions.length - 1)) {
+            setQuizContext({isStarted: false, isFinished: true, number: 0, score: quiz.score, correctAnswer: true,  questions: Questions});
+        } else {
+            setQuizContext({isStarted: true, isFinished: false, number: quiz.number + 1, score: quiz.score + 10, correctAnswer: true, questions: Questions});
+        }
     }
+
+    const QuestionIncorrect = () =>  {
+        if (quiz.number === (quiz.questions.length - 1)) {
+            setQuizContext({isStarted: false, isFinished: true, number: 0, score: quiz.score, correctAnswer: true,  questions: Questions});
+        } else {
+            setQuizContext({isStarted: true, isFinished: false, number: quiz.number + 1, score: quiz.score - 10, correctAnswer: true, questions: Questions});
+        }
+    }
+
+    const wrongAnswer = () =>  {
+        setQuizContext({isStarted: true, isFinished: false, number: quiz.number, score: quiz.score, correctAnswer: false,  questions: Questions});
+
+    }
+
 
     const handleAnswer = (e) => {
         const selectedButton = e.target.value;
@@ -36,12 +57,13 @@ const Quiz = () => {
         const correctCheck = Object.values(QuestionObj)[2];
         console.log(correctCheck);
         if (selectedButton === correctCheck) {
-            QuestionCorrect();
             console.log("Your Score Is: " + quiz.score)
             console.log("Your Number Is: " + quiz.number)
+            QuestionCorrect();
         } else {
-            QuestionIncorrect();
+            wrongAnswer();
             alert("Sorry, the correct answer is: " + correctCheck);
+            QuestionIncorrect();
         };
     }
 
@@ -59,6 +81,7 @@ const Quiz = () => {
                     answerFour={QuestionObj.incorrect[2]}
                     handleAnswer={handleAnswer}
                     correctAnswer={quiz.correctAnswer}
+                    goHome={goHome}
                 />  
             <Logo />
             <Title />
