@@ -19,16 +19,24 @@
   height: 100%;
 }
 
-main.default {
-  background-color: #0c154a;
-}
-
-main.correct {
+.mainCorrect {
+  grid-area: main;
   background: rgb(12, 66, 81);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: white;
 }
 
-main.incorrect {
+.mainIncorrect {
+  grid-area: main;
   background: rgb(95, 12, 29);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: white;
 }
 
 .welcome {

@@ -14,33 +14,38 @@ const Quiz = () => {
     const [nextBtnClass, setNextBtnClass] = useState(false);
     const [resultsBtnClass, setResultsBtnClass] = useState(false);
     const [welcomeClass, setWelcomeClass] = useState(true);
-
-    const firstObject = Object.values(quiz.questions)[quiz.number];
-    console.log(firstObject.question);
+    const QuestionObj = Object.values(quiz.questions)[quiz.number];
 
     function startGame (e) {
         e.preventDefault();
         console.log(quiz.number);
-        setQuizContext({isStarted: true, number: 0, questions: Questions});
-        setStartClass(!startClass);
-        setWelcomeClass(!welcomeClass);
-        let currentQuestionIndex = 0
+        setQuizContext({isStarted: true, number: 0, correctAnswer: true, questions: Questions});
     }
+
+    const QuestionCorrect = (e) => {
+        setQuizContext({isStarted: true, number: quiz.number, correctAnswer: true, questions: Questions});
+    }
+
+    const QuestionIncorrect = (e) => {
+        setQuizContext({isStarted: true, number: quiz.number, correctAnswer: false, questions: Questions});
+    }
+
 
     const showNextQuestion = (e) => {
-        setQuizContext({isStarted: true, number: quiz.number + 1, questions: Questions});
+        setQuizContext({isStarted: true, number: quiz.number + 1, correctAnswer: true, questions: Questions});
     }
-
     const handleAnswer = (e) => {
         const selectedButton = e.target.value;
-        const buttonCorrectCheck = Object.keys(firstObject);
-        const correctCheck = Object.values(firstObject)[2];
+        const buttonCorrectCheck = Object.keys(QuestionObj);
+        const correctCheck = Object.values(QuestionObj)[2];
         console.log(correctCheck);
         if (selectedButton === correctCheck) {
-            alert("You got that right!");
+            QuestionCorrect();
         } else {
-            alert("You got that wrong!");
-        }
+            QuestionIncorrect();
+            alert("Sorry, the correct answer is: " + correctCheck);
+        };
+        showNextQuestion();
     }
 
     return ( 
@@ -50,13 +55,13 @@ const Quiz = () => {
                     startClass={startClass}
                     startGame={startGame}
                     resultsBtnClass={resultsBtnClass}
-                    question={firstObject.question}
-                    answerOne={firstObject.correct}
-                    answerTwo={firstObject.incorrect[0]}
-                    answerThree={firstObject.incorrect[1]}
-                    answerFour={firstObject.incorrect[2]}
-                    showNextQuestion={showNextQuestion}
+                    question={QuestionObj.question}
+                    answerOne={QuestionObj.correct}
+                    answerTwo={QuestionObj.incorrect[0]}
+                    answerThree={QuestionObj.incorrect[1]}
+                    answerFour={QuestionObj.incorrect[2]}
                     handleAnswer={handleAnswer}
+                    correctAnswer={quiz.correctAnswer}
                 />  
             <Logo />
             <Title />

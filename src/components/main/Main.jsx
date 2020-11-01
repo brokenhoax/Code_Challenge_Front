@@ -5,7 +5,7 @@ import styles from "./Main.module.css";
 const Main = props => {
 
     const [quiz, setQuizContext] = useContext(QuizContext);
-
+    
     if (!quiz.isStarted) {
         return (
             <div className={styles.main}>
@@ -33,7 +33,7 @@ const Main = props => {
 
     if (quiz.isStarted) {
         return (
-            <div className={styles.main}>
+            <div className={props.correctAnswer ? `${styles.mainCorrect}` : `${styles.mainIncorrect}`}>
                 <div className={styles.quizContainer}>
                     <div className={styles.question}>
                         {props.question}
@@ -49,12 +49,6 @@ const Main = props => {
                     </div>
                     <div className={styles.four}>
                         <button className={styles.btn} value={props.answerFour} onClick={(e) => {props.handleAnswer(e)}}>{props.answerFour}</button>
-                    </div>
-                    <div className={styles.prev}>
-                        <button className={styles.nextBtn}>Previous</button>
-                    </div>
-                    <div className={styles.next}>
-                        <button className={styles.prevBtn} onClick={(e) => {props.showNextQuestion(e)}}>Next</button>
                     </div>
                 </div>
             </div>
