@@ -19,21 +19,17 @@ const Quiz = () => {
     function startGame (e) {
         e.preventDefault();
         console.log(quiz.number);
-        setQuizContext({isStarted: true, number: 0, correctAnswer: true, questions: Questions});
+        setQuizContext({isStarted: true, number: 0, score: 0, correctAnswer: true,  questions: Questions});
     }
 
-    const QuestionCorrect = (e) => {
-        setQuizContext({isStarted: true, number: quiz.number, correctAnswer: true, questions: Questions});
+    function QuestionCorrect() {
+        setQuizContext({isStarted: true, number: quiz.number + 1, score: quiz.score + 10, correctAnswer: true, questions: Questions});
     }
 
-    const QuestionIncorrect = (e) => {
-        setQuizContext({isStarted: true, number: quiz.number, correctAnswer: false, questions: Questions});
+    function QuestionIncorrect() {
+        setQuizContext({isStarted: true, number: quiz.number + 1, score: quiz.score - 10, correctAnswer: false, questions: Questions});
     }
 
-
-    const showNextQuestion = (e) => {
-        setQuizContext({isStarted: true, number: quiz.number + 1, correctAnswer: true, questions: Questions});
-    }
     const handleAnswer = (e) => {
         const selectedButton = e.target.value;
         const buttonCorrectCheck = Object.keys(QuestionObj);
@@ -41,11 +37,12 @@ const Quiz = () => {
         console.log(correctCheck);
         if (selectedButton === correctCheck) {
             QuestionCorrect();
+            console.log("Your Score Is: " + quiz.score)
+            console.log("Your Number Is: " + quiz.number)
         } else {
             QuestionIncorrect();
             alert("Sorry, the correct answer is: " + correctCheck);
         };
-        showNextQuestion();
     }
 
     return ( 

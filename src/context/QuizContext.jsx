@@ -8,6 +8,7 @@ export const QuizProvider = props => {
         {
             isStarted: false,
             number: 0,
+            score: 'Q',
             correctAnswer: true,
             questions: [
                 {
