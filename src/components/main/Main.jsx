@@ -77,8 +77,10 @@ const Main = props => {
             <div className={styles.main}>
                 <div className={styles.scoreboard}>
                     <h1 className={styles.scoreboardHeader}>{handleMessage()}</h1>
-                    <p className={styles.score}>{quiz.score}</p>
-                    <h1 className={styles.message}>Points</h1>
+                    <div className={styles.points}>
+                        <p className={styles.score}>{quiz.score}</p>
+                        <h1>Points</h1>
+                    </div>
                     <div className={styles.navBtns}>
                         <button className={styles.nav} onClick={(e) => {props.goHome(e)}}>Home</button>
                         <button className={styles.nav} onClick={(e) => {props.startGame(e)}}>Restart</button>

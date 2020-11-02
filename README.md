@@ -58,11 +58,11 @@ Try if you dare!
 
 <br>
 
-### To test the app hosted on GitHub:
+### Link to test the app hosted on GitHub Pages:
 
 <br>
 
-[Add Link Here]
+[Link: Quizzy on GitHub Pages](https://brokenhoax.github.io/Code_Challenge_Front/)
 
 <br>
 
