@@ -128,6 +128,11 @@
   font-size: 2rem;
 }
 
+.points {
+  margin: 4rem;
+  text-align: center;
+}
+
 .score {
   font-size: 10rem;
   font-family: "Vampiro One", cursive;
@@ -135,7 +140,6 @@
 }
 
 .scoreboardHeader {
-  padding: 2rem;
 }
 
 .navBtns {
