@@ -14,9 +14,6 @@ const Quiz = () => {
     const [nextBtnClass, setNextBtnClass] = useState(false);
     const [resultsBtnClass, setResultsBtnClass] = useState(false);
     const [welcomeClass, setWelcomeClass] = useState(true);
-
-
-
     const QuestionObj = Object.values(quiz.questions)[quiz.number];
 
     function startGame (e) {
@@ -26,6 +23,7 @@ const Quiz = () => {
     }
 
     function goHome (e) {
+        e.preventDefault();
         setQuizContext({isStarted: false, isFinished: false, number: 0, score: 0, correctAnswer: true,  questions: Questions});
     }
 
@@ -47,9 +45,7 @@ const Quiz = () => {
 
     const wrongAnswer = () =>  {
         setQuizContext({isStarted: true, isFinished: false, number: quiz.number, score: quiz.score, correctAnswer: false,  questions: Questions});
-
     }
-
 
     const handleAnswer = (e) => {
         const selectedButton = e.target.value;

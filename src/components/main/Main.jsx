@@ -23,28 +23,25 @@ const Main = props => {
         return (
             <div className={styles.main}>
                 <div className={styles.welcomeContainer}>
-                    <div className={props.welcomeClass ? `${styles.welcome}` : `${styles.hide}`}>
-                        <h1>Welcome to Quizzy!</h1>
-                            <h2>How To Play:</h2>
-                                <ul>
-                                    <li>You will have 45 seconds to complete the quiz.</li>
-                                    <li>A countdown timer (top-right) will help you keep track.</li>
-                                    <li>You will earn 10 points for every question you answer correctly.</li>
-                                    <li>You will lose 10 points for every question you get wrong.</li>
-                                </ul>
-                            <p>Are you up to the challenge?!</p>
-                        <h2>Click the "Ready" button below to begin... Good luck!</h2>
-                    </div>
-                    <div>
-                        <button className={styles.nav} onClick={(e) => {props.startGame(e)}}>Ready!</button>
-                    </div>
+                    <h1 className={styles.welcomeHeader}>Welcome to Quizzy!</h1>
+                        <h2>How To Play:</h2>
+                        <h3 className={styles.text}>Quizzy is a simple quiz app built using the MERN stack. Quizzy allows users to track their score as they work through the provided questions. Answers are provided in multiple-choice format and correct answers are provided when answered incorrectly. The pressure is on with the addition of a 35-second timer! And the stakes are high with point deductions for every incorrect answer.</h3>
+                            <ul>
+                                <li>You will have 35 seconds to complete the quiz.</li>
+                                <li>A countdown timer (top-right) will help you keep track.</li>
+                                <li>You will earn 10 points for every question you answer correctly.</li>
+                                <li>You will lose 10 points for every question you get wrong.</li>
+
+                            </ul>
+                        <p>Can you break 100 and be "super-hero like"?&nbsp;&nbsp;&nbsp;&nbsp;--Try if you dare!</p>
+                        <button className={styles.nav} onClick={(e) => {props.startGame(e)}}>Play</button>
                 </div>
             </div>
         );
     }
 
     //Show Quiz
-    if ((quiz.isStarted) && (!quiz.isFinished)) {
+    if (!quiz.isFinished) {
         return (
             <div className={props.correctAnswer ? `${styles.mainCorrect}` : `${styles.mainIncorrect}`}>
                 <div className={styles.quizContainer}>
@@ -74,7 +71,7 @@ const Main = props => {
         return (
             <div className={styles.main}>
                 <div className={styles.scoreboard}>
-                    <h1 className={styles.message}>{handleMessage()}</h1>
+                    <h1 className={styles.scoreboardHeader}>{handleMessage()}</h1>
                     <p className={styles.score}>{quiz.score}</p>
                     <h1 className={styles.message}>Points</h1>
                     <div className={styles.navBtns}>

@@ -25,7 +25,7 @@ Quizzy allows users to track their score as they work through the provided quest
 
 Answers are provided in multiple choice format and correct answers are provided when answered incorrectly.
 
-The pressure is on with the addition of a 45-second timer!
+The pressure is on with the addition of a 35-second timer!
 
 And the stakes are high with point deductions for every incorrect answer!!
 
