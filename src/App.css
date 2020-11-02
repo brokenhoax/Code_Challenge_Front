@@ -8,12 +8,12 @@
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0;
-  background-color: #080e33;
+  background-color: #000140;
   color: whitesmoke;
 }
 
 .title {
-  background-color: blue;
+  background-color: #000140;
 }
 
 @font-face {

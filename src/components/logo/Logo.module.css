@@ -3,12 +3,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #080e33;
+  background-color: #1b1f3a;
   font-weight: bold;
   font-size: 4rem;
   padding: 20px;
   font-family: "Vampiro One", cursive;
-  color: #ffff05;
+  color: #ff7844;
 }
 
 #spinner {
