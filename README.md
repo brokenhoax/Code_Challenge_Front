@@ -1,6 +1,6 @@
 # Quizzy
 
-![Project Image](./public/assets/images/Quizzy.png)
+![Project Image](./public/assets/images/Quizzy_Demo.gif)
 
 ## Table of Contents
 
