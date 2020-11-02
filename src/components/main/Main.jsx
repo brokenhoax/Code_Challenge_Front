@@ -18,6 +18,7 @@ const Main = props => {
         };
     }
     
+    //Show Instructions
     if (!quiz.isStarted && !quiz.isFinished) {
         return (
             <div className={styles.main}>
@@ -34,15 +35,16 @@ const Main = props => {
                             <p>Are you up to the challenge?!</p>
                         <h2>Click the "Ready" button below to begin... Good luck!</h2>
                     </div>
-                    <div className={styles.controls}>
-                        <button className={styles.btn} onClick={(e) => {props.startGame(e)}}>Ready!</button>
+                    <div>
+                        <button className={styles.nav} onClick={(e) => {props.startGame(e)}}>Ready!</button>
                     </div>
                 </div>
             </div>
         );
     }
 
-    if (quiz.isStarted) {
+    //Show Quiz
+    if ((quiz.isStarted) && (!quiz.isFinished)) {
         return (
             <div className={props.correctAnswer ? `${styles.mainCorrect}` : `${styles.mainIncorrect}`}>
                 <div className={styles.quizContainer}>
@@ -66,7 +68,9 @@ const Main = props => {
         );
     }
 
+    //Show Scoreboard
     if (quiz.isFinished) {
+
         return (
             <div className={styles.main}>
                 <div className={styles.scoreboard}>
