@@ -24,16 +24,21 @@ const Main = props => {
             <div className={styles.main}>
                 <div className={styles.welcomeContainer}>
                     <h1 className={styles.welcomeHeader}>Welcome to Quizzy!</h1>
-                        <h2>How To Play:</h2>
+                        <h2>What is Quizzy?</h2>
+                        <hr></hr>
                         <h3 className={styles.text}>Quizzy is a simple quiz app built using the MERN stack. Quizzy allows users to track their score as they work through the provided questions. Answers are provided in multiple-choice format and correct answers are provided when answered incorrectly. The pressure is on with the addition of a 35-second timer! And the stakes are high with point deductions for every incorrect answer.</h3>
-                            <ul>
-                                <li>You will have 35 seconds to complete the quiz.</li>
-                                <li>A countdown timer (top-right) will help you keep track.</li>
-                                <li>You will earn 10 points for every question you answer correctly.</li>
-                                <li>You will lose 10 points for every question you get wrong.</li>
 
-                            </ul>
-                        <p>Can you break 100 and be "super-hero like"?&nbsp;&nbsp;&nbsp;&nbsp;--Try if you dare!</p>
+                        <h2>How to Play</h2>
+                        <ul className={styles.instructions}>
+                            <li>You will have 35 seconds to complete the quiz.</li>
+                            <li>A countdown timer (top-right) will help you keep track.</li>
+                            <li>You will earn 10 points for every question you answer correctly.</li>
+                            <li>You will lose 10 points for every question you get wrong.</li>
+
+                        </ul>
+                        <hr></hr>
+                        <p className={styles.challenge}>Challenge: Break 100 Points!</p>
+                        <hr></hr>
                         <button className={styles.nav} onClick={(e) => {props.startGame(e)}}>Play</button>
                 </div>
             </div>

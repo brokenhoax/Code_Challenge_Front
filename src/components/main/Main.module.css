@@ -3,12 +3,25 @@
 }
 
 .text {
-  line-height: 3.5rem;
+  line-height: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.instructions {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.challenge {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .main {
   grid-area: main;
-  background-color: #0c154a;
+  background-color: #53354a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +30,7 @@
 }
 .mainCorrect {
   grid-area: main;
-  background: rgb(12, 66, 81);
+  background: #53354a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +40,7 @@
 
 .mainIncorrect {
   grid-area: main;
-  background: rgb(95, 12, 29);
+  background: #1b1f3a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,16 +51,16 @@
 .welcomeContainer {
   display: flex;
   flex-direction: column;
-  background-color: #0c154a;
   box-sizing: border-box;
   line-height: 3rem;
   width: 50%;
 }
 
 .welcomeHeader {
-  padding-bottom: 5rem;
-  color: #8d07f6;
+  margin: 5rem;
+  color: #ff7844;
   font-size: 4rem;
+  line-height: 4rem;
 }
 
 .readyUp {
@@ -100,7 +113,7 @@
 .btn {
   border: none;
   height: 100%;
-  background-color: #080e33;
+  background-color: #1b1f3a;
   color: white;
   border-radius: 0.5rem;
   font-size: 3rem;
@@ -118,7 +131,7 @@
 .score {
   font-size: 10rem;
   font-family: "Vampiro One", cursive;
-  color: #8d07f6;
+  color: #ff7844;
 }
 
 .scoreboardHeader {
@@ -139,7 +152,7 @@
 .nav {
   min-width: 15rem;
   border: none;
-  background-color: #080e33;
+  background-color: #1b1f3a;
   color: white;
   border-radius: 0.5rem;
   font-size: 3rem;
