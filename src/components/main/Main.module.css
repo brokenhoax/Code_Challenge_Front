@@ -3,7 +3,20 @@
 }
 
 .text {
-  line-height: 3.5rem;
+  line-height: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.instructions {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.challenge {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .main {
@@ -44,9 +57,10 @@
 }
 
 .welcomeHeader {
-  padding-bottom: 5rem;
+  margin: 5rem;
   color: #ff7844;
   font-size: 4rem;
+  line-height: 4rem;
 }
 
 .readyUp {
