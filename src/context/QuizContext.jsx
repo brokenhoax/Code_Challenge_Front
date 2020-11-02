@@ -7,7 +7,7 @@ export const QuizProvider = props => {
     const [quiz, setQuizContext] = useState(
         {
             isStarted: false,
-            isFinished: true,
+            isFinished: false,
             number: 0,
             score: 'Q',
             correctAnswer: true,
