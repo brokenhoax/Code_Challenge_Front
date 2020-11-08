@@ -3,6 +3,7 @@ import styles from "./Logo.module.css"
 import { QuizContext } from '../../context/QuizContext';
 
 const Logo = props => {
+    
     const [quiz, setQuizContext] = useContext(QuizContext);
 
     return ( 

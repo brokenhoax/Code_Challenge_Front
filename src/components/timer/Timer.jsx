@@ -4,10 +4,12 @@ import { TimerContext } from '../../context/TimerContext';
 import { QuizContext } from '../../context/QuizContext';
 
 export const Timer = props => {
+    
     const [counter, setCounter] = useContext(TimerContext);
     const [quiz, setQuizContext] = useContext(QuizContext);
     
     // Set the Timer
+
     useEffect(() => {
         if (quiz.isStarted) {
             console.log("Is Quiz Started?: " + quiz.isStarted);
@@ -16,6 +18,7 @@ export const Timer = props => {
             console.log(counter.seconds);
 
     // Reset the Timer IF Time Runs Out
+
         if (counter.seconds < 1) {
             setQuizContext({isStarted: false, isFinished: true, number: 0, score: 0, correctAnswer: true,  questions: quiz.questions});
             setCounter({seconds: '', isActive: false});
@@ -30,11 +33,14 @@ export const Timer = props => {
     }, [counter.seconds, counter.isActive, quiz.isStarted, setQuizContext]);
 
     // Reset the Timer If Completed BEFORE Time Runs Out
+
     useEffect(() => {
         if (quiz.number === (quiz.questions.length - 1)) {
             setCounter({seconds: 35, isActive: false});
         }
     }, [quiz.number, quiz.questions.length]);
+
+    // Show Scoreboard by Setting Counter and Quiz Contexts
 
     const showScoreboard = () => {
         setCounter({seconds: 35, isActive: false});
