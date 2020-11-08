@@ -6,6 +6,8 @@ const Main = props => {
 
     const [quiz, setQuizContext] = useContext(QuizContext);
 
+    // Handle Message To User When Quiz Finished
+
     const handleMessage = () => {
         if (quiz.score <= 60) {
             return ("¯¯\\_(ツ)_/¯¯")
@@ -18,7 +20,8 @@ const Main = props => {
         };
     }
     
-    //Show Instructions
+    // Show Instructions
+
     if (!quiz.isStarted && !quiz.isFinished) {
         return (
             <div className={styles.main}>
@@ -45,7 +48,8 @@ const Main = props => {
         );
     }
 
-    //Show Quiz
+    // Show Quiz
+
     if (!quiz.isFinished) {
         return (
             <div className={props.correctAnswer ? `${styles.mainCorrect}` : `${styles.mainIncorrect}`}>
@@ -70,7 +74,8 @@ const Main = props => {
         );
     }
 
-    //Show Scoreboard
+    // Show Scoreboard
+
     if (quiz.isFinished) {
 
         return (

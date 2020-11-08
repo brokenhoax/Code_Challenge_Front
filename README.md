@@ -19,7 +19,7 @@
 
 <br>
 
-Quizzy is a simple quiz app built using the MERN stack.
+Quizzy is a simple quiz app built using React.
 
 Quizzy allows users to track their score as they work through the provided questions.
 
