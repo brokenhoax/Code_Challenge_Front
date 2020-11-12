@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap");
+
+@tailwind base;
+
+@tailwind components;
+
+.appGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    "logo   title  timer"
+    "main   main   main";
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #000140;
+  color: whitesmoke;
+}
+
+.main {
+  grid-area: main;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.title {
+  grid-area: title;
+}
+
+.timer {
+  grid-area: timer;
+}
+
+.btn {
+  @apply inline-block text-2xl bg-gray-200 text-gray-900 px-12 py-3 my-4 rounded-md;
+}
+
+.btn:hover {
+  @apply bg-indigo-400;
+}
+
+.btn:focus {
+  @apply outline-none shadow-outline;
+}
+
+.btn:active {
+  @apply bg-indigo-600;
+}
+
+@tailwind utilities;
