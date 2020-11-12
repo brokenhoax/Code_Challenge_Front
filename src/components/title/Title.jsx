@@ -1,9 +1,9 @@
-import styles from "./Title.module.css";
+import '../../styles/app.css';
 
 const Title = () => {
     
     return ( 
-        <div className={styles.title}>Quizzy</div>
+        <div className="title font-body text-4xl flex justify-center items-center">Quizzy</div>
      );
 }
  

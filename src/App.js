@@ -2,7 +2,7 @@ import React from "react";
 import Quiz from './components/quiz/Quiz';
 import { TimerProvider }  from "./context/TimerContext";
 import { QuizProvider }  from "./context/QuizContext";
-import './App.css';
+import "./styles/app.css"
 
 const App = () =>  {
 
@@ -16,3 +16,5 @@ const App = () =>  {
 }
 
 export default App;
+
+

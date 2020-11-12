@@ -1,4 +1,4 @@
-.App {
+.grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 80px 1fr;
@@ -16,7 +16,7 @@
   background-color: #000140;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Vampiro One", cursive;
   src: url(./fonts//Vampiro_One/VampiroOne-Regular.ttf);
-}
+} */

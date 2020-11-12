@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
-import styles from "./Logo.module.css"
 import { QuizContext } from '../../context/QuizContext';
+import '../../styles/app.css';
 
 const Logo = props => {
     
-    const [quiz, setQuizContext] = useContext(QuizContext);
+    const [quiz] = useContext(QuizContext);
 
     return ( 
-        <div className={styles.logo}>
-            <div id={styles.spinner}>{quiz.score}</div>
-        </div>
+        <header>
+            <div className="logo font-body text-5xl mx-4 flex items-center">
+                <div data-cy="point-check" className={!quiz.isStarted ? `` : `animate-pulse`}>{quiz.score}</div>
+            </div>
+        </header>
      );
 }
  

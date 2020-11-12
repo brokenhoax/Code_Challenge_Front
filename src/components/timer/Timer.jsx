@@ -1,56 +1,57 @@
 import React, { useContext, useEffect } from "react";
-import styles from "./Timer.module.css";
 import { TimerContext } from '../../context/TimerContext';
 import { QuizContext } from '../../context/QuizContext';
+import '../../styles/app.css';
 
 export const Timer = props => {
     
     const [counter, setCounter] = useContext(TimerContext);
     const [quiz, setQuizContext] = useContext(QuizContext);
     
-    // Set the Timer
+
+    // Handle Timer 
 
     useEffect(() => {
-        if (quiz.isStarted) {
-            console.log("Is Quiz Started?: " + quiz.isStarted);
-            const timer = counter.seconds >= 1 && setInterval(() => setCounter({seconds: counter.seconds - 1, isActive: true}), 1000);
-            console.log("Is Timer Active?: " + counter.isActive);
-            console.log(counter.seconds);
+        
+        // Reset Timer When Quiz Finished 
 
-    // Reset the Timer IF Time Runs Out
+        if (quiz.isFinished) {
+            setCounter({seconds: 35, isActive: true});
+        }
+
+        // Set Timer When Quiz Starts
+
+        if (quiz.isStarted && !quiz.isFinished) {
+
+            // Set the Timer
+
+            const timer = counter.seconds >= 1 && setInterval(() => setCounter({seconds: counter.seconds - 1, isActive: true}), 1000);
+            console.log(counter.seconds);
 
         if (counter.seconds < 1) {
+
+            // Reset the Timer If Time Runs Out
+            // Show Scoreboard by Setting Counter and Quiz Context
+
             setQuizContext({isStarted: false, isFinished: true, number: 0, score: 0, correctAnswer: true,  questions: quiz.questions});
             setCounter({seconds: '', isActive: false});
-            console.log("Is Quiz Started?: " + quiz.isStarted);
-            console.log("Is Timer Active?: " + counter.isActive);
-            console.log(counter.seconds);
+
+            function showScoreboard() {
+                
+                setCounter({seconds: 35, isActive: false});
+                setQuizContext({isStarted: false, isFinished: true, number: 0, score: quiz.score, correctAnswer: true,  questions: quiz.questions});
+            }
             showScoreboard();
         };
         return () => 
             clearTimeout(timer);
         }
-    }, [counter.seconds, counter.isActive, quiz.isStarted, setQuizContext]);
-
-    // Reset the Timer If Completed BEFORE Time Runs Out
-
-    useEffect(() => {
-        if (quiz.number === (quiz.questions.length - 1)) {
-            setCounter({seconds: 35, isActive: false});
-        }
-    }, [quiz.number, quiz.questions.length]);
-
-    // Show Scoreboard by Setting Counter and Quiz Contexts
-
-    const showScoreboard = () => {
-        setCounter({seconds: 35, isActive: false});
-        setQuizContext({isStarted: false, isFinished: true, number: 0, score: quiz.score, correctAnswer: true,  questions: quiz.questions});
-    }
+    }, [setQuizContext, quiz.questions, quiz.score, quiz.isStarted, setCounter, counter.seconds, counter.isActive, quiz.isFinished, quiz.number]);
 
     return ( 
-            <div 
-                className={`${counter.isActive}` ? `${styles.timer}` : `${styles.hide}`}>
-                {counter.seconds}
+            <div className="timer font-body flex justify-end items-center pr-4 text-5xl">
+                {/* className={`${counter.isActive}` ? `${styles.timer}` : `${styles.hide}`} */}
+                <div data-cy="time-check" className={!quiz.isStarted ? `` : `animate-pulse`}>{counter.seconds}</div>
             </div>
      );
 }

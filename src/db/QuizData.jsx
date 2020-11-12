@@ -1,8 +1,8 @@
 const Questions = [
   {
-    "question": "What was Tandem's previous name?",
-    "incorrect": ["Tandem", "Burger Shack", "Extraordinary Humans"],
-    "correct": "Devmynd"
+    "question": "What is the secret to the universe?",
+    "incorrect": ["Chocolate", "Dark Matter", "Gravity"],
+    "correct": "42"
   },
   {
     "question": "In Shakespeare's play Julius Caesar, Caesar's last words were...",
